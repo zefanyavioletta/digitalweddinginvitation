@@ -278,18 +278,19 @@ h1, h2, h3,
   border-radius: 50% !important; background: #ffffff !important; border: none !important;
   transform: translateX(-50%) rotate(0deg) !important; z-index: 3;
 }
-.tl-left { width: 50%; padding-right: 1.4rem; text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
-.tl-right { width: 50%; padding-left: 1.4rem; text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
-.tl-desc { font-size: 0.78rem; line-height: 1.75; color: rgba(244,249,233,0.92); }
+.tl-left  { width: 50%; padding-right: 2.2rem; padding-left: 2rem;  text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
+.tl-right { width: 50%; padding-left:  2.2rem; padding-right: 2rem; text-align: left;  display: flex; flex-direction: column; align-items: flex-start; }
+.tl-title { line-height: 1.10; }
+.tl-desc  { font-size: 0.78rem; line-height: 1.65; color: rgba(244,249,233,0.92); }
 
 /* Polaroid Framing Inside Timeline */
 .polaroid-frame {
-  background: #f4f9e9; padding: 5px 5px 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.28);
-  position: relative; width: 120px; flex-shrink: 0;
+  background: #f4f9e9; padding: 6px 6px 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.32);
+  position: relative; width: 160px; flex-shrink: 0;
 }
-.polaroid-frame img { width: 100%; height: 88px; object-fit: cover; display: block; filter: sepia(0.1) contrast(1.05); }
+.polaroid-frame img { width: 100%; height: 150px; object-fit: cover; display: block; filter: sepia(0.1) contrast(1.05); }
 .polaroid-caption {
-  font-family: 'Raleway', sans-serif; font-size: 0.58rem; font-weight: 400; color: #595a5f;
+  font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 400; color: #595a5f;
   text-align: center; margin-top: 0.45rem; display: flex; align-items: center; justify-content: center;
 }
 
@@ -385,6 +386,8 @@ h1, h2, h3,
   .wish-card-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.95rem; }
   .wish-card-msg { word-break: break-word; overflow-wrap: break-word; font-size: 0.72rem; }
   #sec-rsvp, #sec-event, #sec-gift, #sec-wishes { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .tl-left, .tl-right { padding-left: 0.75rem; padding-right: 0.75rem; }
-  .polaroid-frame { width: 90px; }
+  .tl-left  { padding-right: 1.2rem; padding-left: 0.4rem; }
+  .tl-right { padding-left:  1.2rem; padding-right: 0.4rem; }
+  .polaroid-frame { width: 118px; }
+  .polaroid-frame img { height: 88px; }
 }
