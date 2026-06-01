@@ -1,17 +1,5 @@
-/**
- * MAIN.JS
- * Orchestrates: page transition, music, RSVP logic, story popup,
- * amplop digital, toast, dan semua interaksi utama.
- */
-
 'use strict';
 
-/* ═══════════════════════════════════════════════════════════
-   MUSIC SETUP (Howler.js)
-   ═══════════════════════════════════════════════════════════
-   Ganti src dengan file lagu Anda di assets/audio/bg-music.mp3
-   Disarankan format MP3 + OGG untuk kompatibilitas terbaik
-   ═══════════════════════════════════════════════════════════ */
 let sound        = null;
 let musicPlaying = false;
 let _fadeTimer   = null;
@@ -49,7 +37,6 @@ function initMusic() {
       console.warn('[Music] Audio file not found');
     },
     onplayerror: function () {
-      // Browser blokir autoplay — tunggu unlock lalu coba lagi
       sound.once('unlock', function () {
         sound.volume(0);
         sound.play();
@@ -90,9 +77,6 @@ function updateMusicBtn() {
 }
 
 
-/* ═══════════════════════════════════════════════════════════
-   PAGE TRANSITION: Opening → Main
-   ═══════════════════════════════════════════════════════════ */
 function openInvitation() {
   const openingPage = document.getElementById('opening-page');
   const mainPage    = document.getElementById('main-page');
@@ -101,12 +85,11 @@ function openInvitation() {
   const btn = document.getElementById('open-invitation-btn');
   if (btn) btn.disabled = true;
 
-  // Play musik langsung saat user klik (user gesture = unlock audio context)
   if (sound) {
-    cancelFade();          // batalkan fade yang mungkin sedang berjalan
+    cancelFade();
     sound.volume(0);
-    sound.play();          // dipanggil dalam user gesture → dijamin play
-    fadeTo(0.65, 2000);    // custom fade — lebih reliable dari sound.fade()
+    sound.play();
+    fadeTo(0.65, 2000);
     musicPlaying = true;
     updateMusicBtn();
   }
@@ -116,6 +99,7 @@ function openInvitation() {
   setTimeout(() => {
     openingPage.style.display = 'none';
     mainPage.classList.remove('hidden');
+    document.getElementById('music-player').style.display = 'flex';
     mainPage.classList.add('page-enter');
     mainPage.scrollTop = 0;
 
@@ -128,9 +112,7 @@ function openInvitation() {
   }, 850);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ATTENDANCE LOGIC (RSVP)
-   ═══════════════════════════════════════════════════════════ */
+/* ATTENDANCE LOGIC (RSVP) */
 function initAttendanceLogic() {
   const radios       = document.querySelectorAll('input[name="attendance"]');
   const eventOptions = document.getElementById('event-options');
@@ -141,13 +123,11 @@ function initAttendanceLogic() {
 
       if (this.value === 'hadir') {
         eventOptions.classList.remove('locked');
-        // Enable checkboxes
         eventOptions.querySelectorAll('.event-checkbox').forEach(cb => {
           cb.disabled = false;
         });
       } else {
         eventOptions.classList.add('locked');
-        // Uncheck and disable
         eventOptions.querySelectorAll('.event-checkbox').forEach(cb => {
           cb.checked  = false;
           cb.disabled = true;
@@ -157,9 +137,7 @@ function initAttendanceLogic() {
   });
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RSVP SUBMIT
-   ═══════════════════════════════════════════════════════════ */
+/* RSVP SUBMIT*/
 window.submitRSVP = function () {
   const name       = document.getElementById('rsvp-name')?.value.trim();
   const message    = document.getElementById('rsvp-message')?.value.trim();
@@ -210,9 +188,7 @@ window.submitRSVP = function () {
   }, 800);
 };
 
-/* ═══════════════════════════════════════════════════════════
-   AMPLOP DIGITAL
-   ═══════════════════════════════════════════════════════════ */
+/* AMPLOP DIGITAL */
 window.switchGiftTab = function(tab) {
   const groomEl = document.getElementById('gift-groom');
   const brideEl = document.getElementById('gift-bride');
@@ -256,9 +232,7 @@ window.copyAccount = function (elId, btn) {
   });
 };
 
-/* ═══════════════════════════════════════════════════════════
-   TOAST NOTIFICATION
-   ═══════════════════════════════════════════════════════════ */
+/*  TOAST NOTIFICATION */
 let toastTimeout = null;
 
 function showToast(message) {
@@ -276,9 +250,7 @@ function showToast(message) {
   }, 2500);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   STORY POPUP
-   ═══════════════════════════════════════════════════════════ */
+/* STORY POPUP */
 function initStoryIcons() {
   document.querySelectorAll('.story-icon-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -302,9 +274,7 @@ window.closeStoryPopup = function () {
   document.getElementById('story-overlay')?.classList.add('hidden');
 };
 
-/* ═══════════════════════════════════════════════════════════
-   SCROLL ANIMATIONS (Intersection Observer)
-   ═══════════════════════════════════════════════════════════ */
+/* SCROLL ANIMATIONS (Intersection Observer)  */
 function initScrollAnimations() {
   const targets = document.querySelectorAll(
     '#main-page .section-glass, #main-page .event-card, #main-page .couple-card, #main-page .countdown-card'
@@ -341,9 +311,7 @@ function initScrollReveal() {
   els.forEach(el => obs.observe(el));
 }
 
-/* ═══════════════════════════════════════════════════════════
-   INIT ON DOM READY
-   ═══════════════════════════════════════════════════════════ */
+/* INIT ON DOM READY */
 document.addEventListener('DOMContentLoaded', function () {
   // Init music (preload)
   initMusic();
@@ -362,3 +330,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Story icons
   initStoryIcons();
 });
+
+// Fungsi Smooth Scroll dari Hero ke Section RSVP
+const heroRsvpBtn = document.getElementById('hero-rsvp-btn');
+const secRsvp = document.getElementById('sec-rsvp');
+
+if (heroRsvpBtn && secRsvp) {
+  heroRsvpBtn.addEventListener('click', function() {
+    secRsvp.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+}

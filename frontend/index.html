@@ -34,11 +34,11 @@
 </head>
 <body class="font-jost overflow-hidden">
 
-  <div id="video-bg">
-    <video id="bg-video" autoplay muted loop playsinline>
-      <source src="https://res.cloudinary.com/deforyy1j/video/upload/v1779724057/bg_lidmld.mp4" type="video/mp4" />
-    </video>
-  </div>
+<div id="video-bg" class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none">
+<video id="bg-video" autoplay loop muted playsinline>    <source src="https://res.cloudinary.com/deforyy1j/video/upload/f_auto,q_auto:eco,eo_15/v1779724057/bg_lidmld.mp4" type="video/mp4"> </video>
+  <div class="absolute inset-0 bg-black/70 z-[3]"></div>
+  <div class="grain-overlay"></div>
+</div>
   
   <div id="opening-page" class="fixed inset-0 z-20 flex items-center justify-center">
     <div class="relative w-full max-w-[500px] mx-auto h-full flex flex-col items-center justify-center px-10 text-center">
@@ -48,19 +48,19 @@
         <div class="w-4/5 mx-auto h-px bg-pink-mist/35"></div>
       </div>
 
-      <p class="font-raleway text-ivory/45 tracking-normal text-[0.8rem]  mb-10 opacity-0 animate-fadein-delay-1">
+      <p class="font-raleway text-ivory/50 tracking-normal text-[0.8rem]  mb-10 opacity-0 animate-fadein-delay-1 letter-spacing-[0.15em] uppercase">
         UNDANGAN PERNIKAHAN
       </p>
 
       <div class="opacity-0 animate-fadein-delay-2">
-        <h1 class="font-libre text-ivory" style="font-size: clamp(3.2rem, 13vw, 4.5rem); line-height:1; letter-spacing:normal">
+        <h1 class="font-libre text-ivory" style="font-size: clamp(3.2rem, 13vw, 4.5rem); line-height:1;">
           Sandya
         </h1>
       </div>
 
       <div class="opacity-0 animate-fadein-delay-3 my-6 flex items-center gap-4 w-full justify-center">
         <div class="flex-1 max-w-[80px] h-px bg-pink-mist/30"></div>
-        <span class="font-libre text-pink-mist" style="font-size:2.5rem">&</span>
+        <span class="font-libre text-ivory" style="font-size:2.5rem">&</span>
         <div class="flex-1 max-w-[80px] h-px bg-pink-mist/30"></div>
       </div>
 
@@ -72,7 +72,7 @@
 
       <div class="opacity-0 animate-fadein-delay-5 mt-10 mb-12">
         <p class="font-raleway text-ivory/50 tracking-normal text-[0.75rem] ">
-          SABTU, 11 JULI 2026
+          11 . 07 . 2026
         </p>
         <div class="flex items-center gap-2 justify-center mt-3">
           <div class="w-8 h-px bg-pink-mist/40"></div>
@@ -83,7 +83,7 @@
       <button id="open-invitation-btn"
         class="opacity-0 animate-fadein-delay-6 relative group overflow-hidden rounded-none"
         aria-label="Buka undangan pernikahan">
-        <span class="btn-open-inner relative z-10 font-raleway text-sm tracking-normal  text-ivory px-12 py-4 block">
+        <span class="btn-open-inner relative z-10 font-raleway text-sm tracking-normal letter-spacing-[0.15em] text-ivory px-12 py-4 block">
           BUKA UNDANGAN
         </span>
         <div class="btn-open-bg absolute inset-0 rounded-none"></div>
@@ -100,37 +100,19 @@
 
   <div id="main-page" class="hidden relative z-20 w-full max-w-[500px] mx-auto min-h-screen">
 
-    <div id="music-player" class="fixed bottom-6 right-4 z-50 lg:right-[calc(50%-230px)]">
-      <button id="music-toggle" class="music-circle-btn" aria-label="Toggle musik">
-        <svg id="music-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 18V5l12-2v13"/>
-          <circle cx="6" cy="18" r="3"/>
-          <circle cx="18" cy="16" r="3"/>
-        </svg>
-        <svg id="music-icon-off" width="18" height="18" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="hidden">
-          <path d="M9 18V5l12-2v13" stroke="rgba(244,249,233,0.4)"/>
-          <circle cx="6" cy="18" r="3" stroke="rgba(244,249,233,0.4)"/>
-          <circle cx="18" cy="16" r="3" stroke="rgba(244,249,233,0.4)"/>
-          <line x1="2" y1="2" x2="22" y2="22" stroke="#e26f97" stroke-width="1.6"/>
-        </svg>
-      </button>
-    </div>
-
     <section id="sec-hero" class="relative min-h-screen flex flex-col items-center justify-center px-8 text-center">
-      <p class="font-raleway text-ivory/35 tracking-normal text-[0.8rem]  mb-8">UNDANGAN PERNIKAHAN</p>
+      <p class="font-raleway text-ivory/50 tracking-normal text-[0.8rem] letter-spacing-[0.15em] uppercase  mb-8">UNDANGAN PERNIKAHAN</p>
       <h2 class="font-libre text-ivory mb-3" style="font-size:4rem;line-height:1">Sandya</h2>
       <div class=" my-6 flex items-center gap-4 w-full justify-center">
         <div class="flex-1 max-w-[80px] h-px bg-pink-mist/30"></div>
-        <span class="font-libre text-pink-mist" style="font-size:2.5rem">&</span>
+        <span class="font-libre text-ivory" style="font-size:2.5rem">&</span>
         <div class="flex-1 max-w-[80px] h-px bg-pink-mist/30"></div>
       </div>
       <h2 class="font-libre text-ivory mb-10" style="font-size:4rem;line-height:1">Kukuh</h2>
 
       <div class="flex items-center gap-3 mb-10">
         <div class="w-6 h-px bg-pink-mist/40"></div>
-        <p class="font-raleway text-ivory/45 text-[0.75rem] tracking-normal ">11 . 07 . 2026</p>
+        <p class="font-raleway text-ivory/50 text-[0.75rem] tracking-normal ">11 . 07 . 2026</p>
         <div class="w-6 h-px bg-pink-mist/40"></div>
       </div>
 
@@ -204,8 +186,7 @@
           <div class="tl-dot"></div>
           
           <div class="tl-left">
-            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; text-transform: none; letter-spacing: normal;">Awal bertemu</h4>
-            <div class="tl-location" style="font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:3px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.65;margin-right:2px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Ternate, 2024</div>
+            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; color: #f4f9e9f2; text-transform: none; letter-spacing: normal;">Awal bertemu</h4>
             <p class="tl-desc" style="font-family: 'Raleway', sans-serif;">
               Sandya dinas di Ternate. Di sanalah kami bertemu untuk
               pertama kalinya.
@@ -216,7 +197,7 @@
 
           <div class="tl-right pt-6">
             <div class="polaroid-frame">
-              <img src="assets/images/ternate.jpg" alt="Ternate" onerror="this.style.display='none'; this.parentNode.style.background='#dda1b1'" />
+              <img src="assets/images/ternate.webp" alt="Ternate" onerror="this.style.display='none'; this.parentNode.style.background='#dda1b1'" />
               <span class="polaroid-caption" style="font-family:'Raleway',sans-serif;display:flex;align-items:center;justify-content:center;gap:2px;"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.6;vertical-align:middle;margin-right:2px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Ternate, 2024</span>
             </div>
           </div>
@@ -228,7 +209,7 @@
           <div class="tl-left"></div>
 
           <div class="tl-right">
-            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; text-transform: none; letter-spacing: normal;">Lanjut chattingan</h4>
+            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; color: #f4f9e9f2; text-transform: none; letter-spacing: normal;">Lanjut chattingan</h4>
             <p class="tl-desc" style="font-family: 'Raleway', sans-serif;">
               Kami terus terhubung lewat chat.
               Ada rasa yang muncul,
@@ -241,7 +222,7 @@
           <div class="tl-dot"></div>
           
           <div class="tl-left">
-            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; text-transform: none; letter-spacing: normal;">Ada peran Nurul Inayah</h4>
+            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; color: #f4f9e9f2; text-transform: none; letter-spacing: normal;">Ada peran seorang teman</h4>
             <p class="tl-desc" style="font-family: 'Raleway', sans-serif;">
               Nurul Inayah, teman kami,
               meyakinkan Kukuh bahwa
@@ -259,14 +240,13 @@
           
           <div class="tl-left pt-4">
              <div class="polaroid-frame ml-auto">
-              <img src="assets/images/manado.jpeg" alt="Manado" onerror="this.style.display='none'; this.parentNode.style.background='#dda1b1'" />
+              <img src="assets/images/manado.webp" alt="Manado" onerror="this.style.display='none'; this.parentNode.style.background='#dda1b1'" />
               <span class="polaroid-caption" style="font-family:'Raleway',sans-serif;display:flex;align-items:center;justify-content:center;gap:2px;"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.6;vertical-align:middle;margin-right:2px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Manado</span>
             </div>
           </div>
 
           <div class="tl-right">
-            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; text-transform: none; letter-spacing: normal;">Pertemuan kedua</h4>
-            <div class="tl-location" style="font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:3px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.65;margin-right:2px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Manado</div>
+            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; color: #f4f9e9f2; text-transform: none; letter-spacing: normal;">Pertemuan kedua</h4>
             <p class="tl-desc" style="font-family: 'Raleway', sans-serif;">
               Kukuh dinas ke Manado,
               dan kami bertemu untuk kedua kalinya.
@@ -280,7 +260,7 @@
           <div class="tl-dot"></div>
           
           <div class="tl-left">
-            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; text-transform: none; letter-spacing: normal;">Ketidaksengajaan<br>di Soetta</h4>
+            <h4 class="tl-title" style="font-family: 'Parisienne', cursive !important; font-size: 1.8rem; color: #f4f9e9f2; text-transform: none; letter-spacing: normal;">Ketidaksengajaan<br>di Soetta</h4>
             <p class="tl-desc" style="font-family: 'Raleway', sans-serif;">
               Kami bertemu lagi di Bandara Soekarno-Hatta,
               saat akan pulang ke Jakarta.
@@ -292,14 +272,14 @@
 
           <div class="tl-right pt-6">
             <div class="polaroid-frame">
-              <img src="assets/images/jakarta.jpg" alt="Soetta Airport" onerror="this.style.display='none'; this.parentNode.style.background='#dda1b1'" />
+              <img src="assets/images/jakarta.webp" alt="Soetta Airport" onerror="this.style.display='none'; this.parentNode.style.background='#dda1b1'" />
               <span class="polaroid-caption" style="font-family:'Raleway',sans-serif;display:flex;align-items:center;justify-content:center;gap:2px;"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.6;vertical-align:middle;margin-right:2px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Soetta Airport</span>
             </div>
           </div>
         </div>
       </div>
       <div class="relative w-full text-center mt-12 reveal">
-          <h4 class="tl-title mb-2" style="font-family: 'Parisienne', cursive !important; font-size: 2rem; text-transform: none; letter-spacing: normal;">Mulai kisah cinta ini,<br>sampai selamanya</h4>
+          <h4 class="tl-title mb-2" style="font-family: 'Parisienne', cursive !important; font-size: 2rem; color: #f4f9e9f2; text-transform: none; letter-spacing: normal;">Mulai kisah cinta ini,<br>sampai selamanya</h4>
           <p class="tl-desc" style="font-family: 'Raleway', sans-serif;">
             Bersyukur dipertemukan,
             memilih bersama,
@@ -332,7 +312,7 @@
             Pemberkatan
           </h4>
 
-          <p style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.1rem; color: rgba(244, 249, 233, 0.95); margin: 0 0 8px; line-height: 1.4;">
+          <p style="font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 1.1rem; color: #f4f9e9f2; margin: 0 0 8px; line-height: 1.4;">
             GMII "Anugerah" Bekasi
           </p>
           <p style="font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 300; color: rgba(244, 249, 233, 0.6); line-height: 1.7; margin: 0 0 20px;">
@@ -431,7 +411,7 @@
               display: inline-flex; align-items: center; justify-content: center; gap: 8px;
               font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 500;
               letter-spacing: normal; 
-              color: #f4f9e9; background: rgba(221, 161, 177, 0.15);
+              color: #f4f9e9; background: #dda1b126;
               border: 1px solid #dda1b1;
               border-radius: 0px; padding: 12px 32px;
               cursor: pointer; transition: all 0.2s;
@@ -442,6 +422,22 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <div style="margin-top: 30px; width: 100%;">
+        <button id="hero-rsvp-btn" style="
+          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+          font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 500;
+          color: #f4f9e9; background: rgba(226, 111, 151, 0.15);
+          border: 1px solid #dda1b1;
+          border-radius: 0px; 
+          padding: 12px 0;
+          width: 100%;
+          white-space: nowrap;
+          cursor: pointer; transition: all 0.2s;
+          text-decoration: none;">
+          <span style="letter-spacing: 0.18em; text-transform: uppercase;">JUMP TO RSVP & UCAPAN</span>
+        </button>
       </div>
 
       <script>
@@ -490,7 +486,7 @@
 <section id="sec-gallery" class="relative py-20 px-4">
   <div class="text-center mb-10 px-4 relative z-10">
     <h3 class="sec-title text-4xl mb-1 text-ivory" style="font-family:'Parisienne',cursive !important;">Galeri Foto</h3>
-    <p class="text-xs text-ivory/80  tracking-normal" style="font-family:'Raleway',sans-serif;">Kenangan-kenangan indah</p>
+    <p class="text-xs text-ivory/80  tracking-normal" style="font-family:'Raleway',sans-serif;">Klik foto untuk lihat lebih dekat</p>
     <div class="w-10 h-px bg-pink-mist/50 mx-auto mt-4"></div>
   </div>
 
@@ -512,17 +508,17 @@
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/9.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/15.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/4.webp" alt="" class="gallery-img" loading="lazy" /></div>
-      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/20.webp" alt="" class="gallery-img" loading="lazy" /></div>
+      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/13.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/2.webp" alt="" class="gallery-img" loading="lazy" /></div>
-      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/21.webp" alt="" class="gallery-img" loading="lazy" /></div>
+      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/20.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/10.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/16.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/17.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/7.webp" alt="" class="gallery-img" loading="lazy" /></div>
-      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/13.webp" alt="" class="gallery-img" loading="lazy" /></div>
+      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/12.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/6.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/19.webp" alt="" class="gallery-img" loading="lazy" /></div>
-      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/3.webp" alt="" class="gallery-img" loading="lazy" /></div>
+      <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/8.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/14.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/3.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="prewed"><img src="assets/images/gallery/prewed/18.webp" alt="" class="gallery-img" loading="lazy" /></div>
@@ -566,13 +562,11 @@
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/1.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/2.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/3.webp" alt="" class="gallery-img" loading="lazy" /></div>
-      <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/4.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/5.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/7.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/8.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/9.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/10.webp" alt="" class="gallery-img" loading="lazy" /></div>
-      <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/11.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/12.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/13.webp" alt="" class="gallery-img" loading="lazy" /></div>
       <div class="masonry-item" data-theme="borobudur"><img src="assets/images/gallery/borobudur/14.webp" alt="" class="gallery-img" loading="lazy" /></div>
@@ -588,26 +582,32 @@
  
       <!-- Header -->
       <div class="text-center mb-10 relative z-10">
-        <p class="section-eyebrow tracking-normal">Hadiah</p>
-        <h3 class="section-title font-libre text-3xl normal-case tracking-normal" style="color:var(--ivory)">Amplop Digital</h3>
+        <h3 class="sec-title text-4xl mb-1 text-ivory" style="font-family:'Parisienne',cursive !important;">Amplop Digital</h3>
         <div class="w-10 h-px bg-pink-mist/50 mx-auto mt-3 mb-4"></div>
         <p style="font-family:'Raleway',sans-serif;font-size:0.72rem;color:rgba(244,249,233,0.45);letter-spacing:0.04em;">Kehadiran dan Doa Anda sangat berarti bagi kami</p>
       </div>
  
       <!-- Tab switcher -->
-      <div class="relative z-10 flex items-center justify-center gap-8 mb-8">
-        <button id="tab-sandya" onclick="pindahTab('sandya')" style="font-family:'Parisienne',cursive;font-size:1.7rem;color:#f4f9e9;background:none;border:none;border-bottom:1px solid rgba(221,161,177,0.55);padding:0 2px 6px;cursor:pointer;transition:all 0.3s;">Sandya</button>
-        <div style="width:0.5px;height:22px;background:rgba(221,161,177,0.22);flex-shrink:0;"></div>
-        <button id="tab-kukuh" onclick="pindahTab('kukuh')" style="font-family:'Parisienne',cursive;font-size:1.7rem;color:rgba(244,249,233,0.3);background:none;border:none;border-bottom:1px solid transparent;padding:0 2px 6px;cursor:pointer;transition:all 0.3s;">Kukuh</button>
+      <div class="filter-wrap flex justify-center mb-6">
+        <button id="tab-sandya" onclick="pindahTab('sandya')" class="gallery-filter-btn active">Sandya</button>
+        <button id="tab-kukuh" onclick="pindahTab('kukuh')" class="gallery-filter-btn" style="border-right:none;">Kukuh</button>
       </div>
  
-      <!-- Sandya -->
+      <!-- Sandya --> 
       <div id="konten-sandya" style="display:block;">
-      <div style="position:relative;border:1px solid rgba(221,161,177,0.18);background:rgba(244,249,233,0.04);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:24px 22px;margin-bottom:12px;">
+      <div style="
+          position: relative;
+          background: rgba(28, 29, 33, 0.85);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(244, 249, 233, 0.1);
+          overflow: hidden;
+          margin-bottom: 12px;
+          padding: 24px 22px;
+        ">
           <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(221,161,177,0.35),transparent);"></div>
-          <p style="font-family:'Raleway',sans-serif;font-size:0.95rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(221,161,177,0.65);margin-bottom:8px;">BNI</p>
-          <p style="font-family:'Raleway',sans-serif;font-size:1.45rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;"> a.n. Ivkrama Sandya Yudha</p>
-          <div style="height:1px;background:rgba(244,249,233,0.07);margin:14px 0;"></div>
+          <p style="font-family:'Raleway',sans-serif;font-size:0.95rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(244,249,233,0.88);margin-bottom:8px;">BNI</p>
+          <p style="font-family:'Raleway',sans-serif;font-size:1rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;"> a.n. Ivkrama Sandya Yudha</p>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <span style="font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:300;color:rgba(244,249,233,0.88);letter-spacing:0.08em;">0908615539</span>
             <button onclick="salin('0908615539', this)" class="gift-copy-btn">
@@ -615,11 +615,19 @@
             </button>
           </div>
         </div>
-      <div style="position:relative;border:1px solid rgba(221,161,177,0.18);background:rgba(244,249,233,0.04);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:24px 22px;margin-bottom:１２px;">
-          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(221,161,177,0.35),transparent);"></div>
+      <div style="
+          position: relative;
+          background: rgba(28, 29, 33, 0.85);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(244, 249, 233, 0.1);
+          overflow: hidden;
+          margin-bottom: 12px;
+          padding: 24px 22px;
+        ">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(221,161,177,0.35),transparent);"></div>
           <p style="font-family:'Raleway',sans-serif;font-size:0.95rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(244,249,233,0.88);margin-bottom:8px;">BRI</p>
-          <p style="font-family:'Raleway',sans-serif;font-size:1.45rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;"> a.n. Ivkrama Sandya Yudha</p>
-          <div style="height:1px;background:rgba(244,249,233,0.07);margin:14px 0;"></div>
+          <p style="font-family:'Raleway',sans-serif;font-size:1rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;"> a.n. Ivkrama Sandya Yudha</p>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <span style="font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:300;color:rgba(244,249,233,0.88);letter-spacing:0.08em;">050701021049502</span>
             <button onclick="salin('050701021049502', this)" class="gift-copy-btn">
@@ -631,11 +639,19 @@
  
       <!-- Kukuh -->
       <div id="konten-kukuh" style="display:none;">
-      <div style="position:relative;border:1px solid rgba(221,161,177,0.18);background:rgba(244,249,233,0.04);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:24px 22px;margin-bottom:12px;">
-          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(221,161,177,0.35),transparent);"></div>
+      <div style="
+          position: relative;
+          background: rgba(28, 29, 33, 0.85);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(244, 249, 233, 0.1);
+          overflow: hidden;
+          margin-bottom: 12px;
+          padding: 24px 22px;
+        ">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(221,161,177,0.35),transparent);"></div>
           <p style="font-family:'Raleway',sans-serif;font-size:0.95rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(244,249,233,0.88);margin-bottom:8px;">Mandiri</p>
-          <p style="font-family:'Raleway',sans-serif;font-size:1.45rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;"> a.n. Yesyurun Hasiholan Kukuh Priyambudi</p>
-          <div style="height:1px;background:rgba(244,249,233,0.07);margin:14px 0;"></div>
+          <p style="font-family:'Raleway',sans-serif;font-size:1rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;"> a.n. Yesyurun Hasiholan Kukuh Priyambudi</p>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <span style="font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:300;color:rgba(244,249,233,0.88);letter-spacing:0.08em;">1860003454382</span>
             <button onclick="salin('1860003454382', this)" class="gift-copy-btn">
@@ -643,11 +659,19 @@
             </button>
           </div>
         </div>
-      <div style="position:relative;border:1px solid rgba(221,161,177,0.18);background:rgba(244,249,233,0.04);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:24px 22px;margin-bottom:12px;">
-          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(22１,１６１,１７７,０．３５),transparent);"></div>
+      <div style="
+          position: relative;
+          background: rgba(28, 29, 33, 0.85);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(244, 249, 233, 0.1);
+          overflow: hidden;
+          margin-bottom: 12px;
+          padding: 24px 22px;
+        ">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(22１,１６１,１７７,０．３５),transparent);"></div>
           <p style="font-family:'Raleway',sans-serif;font-size:0.95rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(244,249,233,0.88);margin-bottom:8px;">Blu BCA</p>
-          <p style="font-family:'Raleway',sans-serif;font-size:1.45rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;">a.n. Yesyurun Hasiholan Kukuh Priyambudi</p>
-          <div style="height:1px;background:rgba(244,249,233,0.07);margin:14px 0;"></div>
+          <p style="font-family:'Raleway',sans-serif;font-size:1rem;color:rgba(244,249,233,0.95);line-height:1.2;margin:0;">a.n. Yesyurun Hasiholan Kukuh Priyambudi</p>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <span style="font-family:'Raleway',sans-serif;font-size:0.95rem;font-weight:300;color:rgba(244,249,233,0.88);letter-spacing:0.08em;">002873605342</span>
             <button onclick="salin('002873605342', this)" class="gift-copy-btn">
@@ -671,24 +695,19 @@
  
       <script>
         function pindahTab(nama) {
-          const sDiv = document.getElementById('konten-sandya');
-          const kDiv = document.getElementById('konten-kukuh');
-          const sTab = document.getElementById('tab-sandya');
-          const kTab = document.getElementById('tab-kukuh');
-          const ON  = '#f4f9e9';
-          const OFF = 'rgba(244,249,233,0.3)';
-          const BORDER_ON  = 'rgba(221,161,177,0.55)';
-          const BORDER_OFF = 'transparent';
-          if (nama === 'sandya') {
-            sDiv.style.display = 'block'; kDiv.style.display = 'none';
-            sTab.style.color = ON;  sTab.style.borderBottomColor = BORDER_ON;
-            kTab.style.color = OFF; kTab.style.borderBottomColor = BORDER_OFF;
-          } else {
-            sDiv.style.display = 'none'; kDiv.style.display = 'block';
-            kTab.style.color = ON;  kTab.style.borderBottomColor = BORDER_ON;
-            sTab.style.color = OFF; sTab.style.borderBottomColor = BORDER_OFF;
-          }
+        const sDiv = document.getElementById('konten-sandya');
+        const kDiv = document.getElementById('konten-kukuh');
+        const sTab = document.getElementById('tab-sandya');
+        const kTab = document.getElementById('tab-kukuh');
+
+        if (nama === 'sandya') {
+          sDiv.style.display = 'block'; kDiv.style.display = 'none';
+          sTab.classList.add('active');  kTab.classList.remove('active');
+        } else {
+          sDiv.style.display = 'none';  kDiv.style.display = 'block';
+          kTab.classList.add('active');  sTab.classList.remove('active');
         }
+      }
         function salin(teks, btn) {
           navigator.clipboard.writeText(teks).then(() => {
             const prev = btn.innerHTML;
@@ -732,7 +751,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Pilih Acara</label>
+            <label class="form-label">Acara yang Akan Anda Hadiri</label>
             <div id="event-options" class="event-options locked rounded-none">
               <label class="event-option"><input type="checkbox" value="pemberkatan" class="event-checkbox hidden" /><span class="event-box rounded-none">Pemberkatan</span></label>
               <label class="event-option"><input type="checkbox" value="resepsi" class="event-checkbox hidden" /><span class="event-box rounded-none">Resepsi</span></label>
@@ -740,10 +759,10 @@
           </div>
           <div class="form-group">
             <label class="form-label">Ucapan & Doa</label>
-            <textarea id="rsvp-message" class="form-textarea rounded-none" rows="3" placeholder="Tulis ucapan dan doa terbaik Anda..."></textarea>
+            <textarea id="rsvp-message" class="form-textarea rounded-none" rows="3" placeholder="Tulis ucapan dan doa Anda..."></textarea>
           </div>
           <button id="rsvp-submit" class="rsvp-submit-btn rounded-none" onclick="submitRSVP()">
-            <span id="rsvp-btn-text">Kirim Ucapan</span>
+            <span id="rsvp-btn-text">Kirim RSVP dan Ucapan</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
           </button>
         </div>
@@ -752,8 +771,8 @@
 
     <section id="sec-wishes" class="relative py-16 px-4">
       <div class="text-center mb-10 px-4 relative z-10">
-        <h3 class="sec-title text-4xl mb-1 text-ivory" style="font-family: 'Parisienne', cursive !important;">Doa & Ucapan</h3>
-        <p class="text-xs text-ivory/80  tracking-normal" style="font-family: 'Raleway', sans-serif;">Terima kasih atas doa dan ucapan yang Anda kirimkan</p>
+        <h3 class="sec-title text-4xl mb-1 text-ivory" style="font-family: 'Parisienne', cursive !important;">Ucapan & Doa</h3>
+        <p class="text-xs text-ivory/80  tracking-normal" style="font-family: 'Raleway', sans-serif;">Terima kasih atas ucapan dan doa yang Anda kirimkan</p>
         <div class="w-10 h-px bg-pink-mist/50 mx-auto mt-4"></div>
       </div>
       <div id="wishes-wall" class="masonry-grid px-2 rounded-none"></div>
@@ -765,19 +784,49 @@
       <h2 class="font-libre text-ivory mb-2" style="font-size:2.5rem; font-weight: normal;">Sandya & Kukuh</h2>
       <p class="font-raleway text-ivory text-[0.75rem] tracking-normal mb-8">11 . 07 . 2026</p>
       <p class="font-jost font italic text-ivory text-xs leading-relaxed max-w-[250px] mx-auto">
-        "Dan di atas segalanya, kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan."
+        "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
       </p>
       <p class="font-jost font italic text-ivory text-xs leading-relaxed max-w-[250px] mx-auto">
-        Kolose 3:14</p>
+        Matius 19:6</p>
       <div class="w-32 h-px bg-pink-mist/40 mx-auto mt-10 mb-1.5"></div>
       <div class="w-20 h-px bg-pink-mist/25 mx-auto"></div>
     </section>
+
+    <div class="text-center py-8">
+  <p class="font-raleway text-ivory/35 text-[0.65rem] tracking-widest uppercase">
+    Created by Zefanya Violetta
+    </p>
+    <p>
+    <a href="https://zefanyavioletta.vercel.app" target="_blank" rel="noopener"
+       class="text-ivory/45 text-[0.65rem] hover:text-pink-mist/45 transition-colors duration-300">
+      zefanyavioletta.vercel.app
+    </a>
+  </p>
+</div>
 
   </div>
 
   </div><!-- end #main-page -->
 
-  <!-- LIGHTBOX — harus di luar #main-page agar fixed ke viewport -->
+      <div id="music-player" style="display:none;" class="fixed bottom-6 right-4 z-50 lg:right-[calc(50%-230px)]">
+        <button id="music-toggle" class="music-circle-btn" aria-label="Toggle musik">
+        <svg id="music-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18V5l12-2v13"/>
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="16" r="3"/>
+        </svg>
+        <svg id="music-icon-off" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+          <path d="M9 18V5l12-2v13" stroke="rgba(244,249,233,0.4)"/>
+          <circle cx="6" cy="18" r="3" stroke="rgba(244,249,233,0.4)"/>
+          <circle cx="18" cy="16" r="3" stroke="rgba(244,249,233,0.4)"/>
+          <line x1="2" y1="2" x2="22" y2="22" stroke="#e26f97" stroke-width="1.6"/>
+        </svg>
+      </button>
+    </div>
+
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox hidden">
     <button id="lb-close" class="lb-close-btn" aria-label="Tutup"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
     <button id="lb-prev" class="lb-nav-btn lb-prev-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
