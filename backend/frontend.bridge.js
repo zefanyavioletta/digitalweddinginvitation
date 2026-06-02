@@ -6,7 +6,7 @@ function mapRowToWish(row) {
   if (row.attend_resepsi)     events.push('resepsi');
   return {
     name:       row.nama_tamu,
-    city:       row.city,
+    city:       row.kota_asal,
     message:    row.pesan,
     attendance: row.tidak_hadir ? 'tidak' : 'hadir',
     events,
@@ -23,7 +23,7 @@ let realtimeSocket = null;
 window.addWish = async function (wish) {
   const payload = {
     nama_tamu:          wish.name,
-    city:               wish.city,
+    kota_asal:          wish.city,
     pesan:              wish.message,
     tidak_hadir:        wish.attendance === 'tidak',
     attend_pemberkatan: wish.events?.includes('pemberkatan') ?? false,

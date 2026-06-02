@@ -63,9 +63,11 @@ async function submitRSVPToSupabase(payload) {
   // Sanitasi & pemotongan string yang aman untuk Emoji menggunakan Array.from()
   const cleanNama = Array.from(payload.nama_tamu.trim()).slice(0, 100).join('');
   const cleanPesan = Array.from(payload.pesan.trim()).slice(0, 500).join('');
+  const cleanKota = Array.from((payload.kota_asal || '').trim()).slice(0, 100).join('');
 
   const row = {
     nama_tamu:          cleanNama,
+    kota_asal:          cleanKota,
     pesan:              cleanPesan,
     tidak_hadir:        Boolean(payload.tidak_hadir),
     attend_pemberkatan: Boolean(payload.attend_pemberkatan),
@@ -106,7 +108,7 @@ async function submitRSVPToSupabase(payload) {
 // ═══════════════════════════════════════════════════════════
 async function fetchWishes({ limit = 100, offset = 0 } = {}) {
   const params = new URLSearchParams({
-    select: 'id,nama_tamu,pesan,created_at,tidak_hadir,attend_pemberkatan,attend_resepsi',
+    select: 'id,nama_tamu,kota_asal,pesan,created_at,tidak_hadir,attend_pemberkatan,attend_resepsi',
     order:  'created_at.desc',
     limit:  String(limit),
     offset: String(offset),
