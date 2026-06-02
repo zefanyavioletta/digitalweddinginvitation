@@ -6,7 +6,7 @@ function mapRowToWish(row) {
   if (row.attend_resepsi)     events.push('resepsi');
   return {
     name:       row.nama_tamu,
-    city:       row.kota_asal,
+    city:       row.city,
     message:    row.pesan,
     attendance: row.tidak_hadir ? 'tidak' : 'hadir',
     events,

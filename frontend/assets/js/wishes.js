@@ -33,10 +33,10 @@ function makeBadges(att, ev) {
 window.createWishCard = function(w) {
   const c = document.createElement('div');
   c.className = 'masonry-item wish-card';
-const nameText = w.city 
+const nameHtml = w.city 
     ? `${esc(w.name)} | <span style="font-size: 0.85em; font-style: italic;">di ${esc(w.city)}</span>` 
     : esc(w.name);c.innerHTML = `
-    <div class="wish-card-name">${nameText}</div>
+    <div class="wish-card-name">${nameHtml}</div>
     <p class="wish-card-msg">${esc(w.message)}</p>
     <div class="wish-card-foot">
       <span class="wish-time">${timeAgo(w.time)}</span>
