@@ -140,6 +140,7 @@ function initAttendanceLogic() {
 /* RSVP SUBMIT*/
 window.submitRSVP = function () {
   const name       = document.getElementById('rsvp-name')?.value.trim();
+  const city       = document.getElementById('rsvp-city')?.value.trim();
   const message    = document.getElementById('rsvp-message')?.value.trim();
   const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
   const btnText    = document.getElementById('rsvp-btn-text');
@@ -147,6 +148,11 @@ window.submitRSVP = function () {
   if (!name) {
     showToast('Mohon isi nama Anda');
     document.getElementById('rsvp-name')?.focus();
+    return;
+  }
+  if (!city) {
+    showToast('Mohon isi kota asal Anda');
+    document.getElementById('rsvp-city')?.focus();
     return;
   }
   if (!attendance) {
@@ -169,17 +175,18 @@ window.submitRSVP = function () {
 
   // Simulate API delay then add wish
   setTimeout(() => {
-    window.addWish({ name, message, attendance, events });
+    window.addWish({ name, city, message, attendance, events });
 
     // Reset form
     document.getElementById('rsvp-name').value    = '';
+    document.getElementById('rsvp-city').value    = '';
     document.getElementById('rsvp-message').value = '';
     document.querySelectorAll('input[name="attendance"]').forEach(r => r.checked = false);
     document.querySelectorAll('.event-checkbox').forEach(cb => cb.checked = false);
     document.getElementById('event-options')?.classList.add('locked');
 
     if (btnText) btnText.textContent = 'Kirim Ucapan';
-    showToast('Ucapan berhasil dikirim!');
+    showToast('RSVP & Ucapan berhasil dikirim!');
 
     // Scroll to wishes wall
     setTimeout(() => {
